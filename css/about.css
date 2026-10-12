@@ -314,9 +314,9 @@
 .build-actions .btn-outline .build-arrow { background: #fff4e8; }
 
 @media (max-width: 1000px) {
-  .about-hero { min-height: 0; }
+  .about-hero { min-height: 0; padding: 56px 0; }
   .about-hero h1 { font-size: 40px; }
-  .about-hero .hero-actions { margin-top: 28px; }
+  .about-hero .hero-actions { margin-top: 28px; flex-wrap: wrap; }
   .journey-map { width: 100%; height: auto; aspect-ratio: auto; margin-top: 28px; transform: none; }
   .journey-map h2,
   .journey-line,
@@ -338,6 +338,17 @@
   .people-top .btn { margin-top: 20px; width: fit-content; }
   .people-photo { width: 100%; height: auto; aspect-ratio: 1280 / 817; }
   .build-photo img { height: auto; aspect-ratio: 560 / 480; }
+  .build-actions { flex-direction: column; }
   .build-actions .btn-orange, .build-actions .btn-outline { min-width: 0; width: 100%; }
   .build-points { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .about-hero h1 { font-size: 32px; }
+  .about-hero p { font-size: 15px; }
+  .about-hero .hero-actions { flex-direction: column; align-items: stretch; }
+  .about-hero .btn { width: 100%; }
+  .journey-map h2, .people h2, .principles h2, .build h2 { font-size: 28px; }
+  .year { font-size: 24px; }
+  .build h2 { font-size: 28px; }
 }

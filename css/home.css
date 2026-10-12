@@ -366,13 +366,17 @@
 @media (max-width: 1100px) {
   .purpose-grid, .support-grid, .product-grid { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: 1fr 1fr; }
-  .hero-frame { height: auto; min-height: 640px; }
+  .hero-frame { height: auto; min-height: 560px; }
   .hero-photo, .hero-wash { width: 100%; height: 100%; }
+  .hero-photo { right: 0; left: 0; object-position: center center; }
+  .hero-wash { width: 100%; background: linear-gradient(180deg, rgba(25, 122, 233, 0.92) 0%, rgba(25, 122, 233, 0.78) 55%, rgba(25, 122, 233, 0.35) 100%); }
   .hero-copy {
     left: auto;
     top: 0;
     width: auto;
-    padding: 64px 24px;
+    max-width: none;
+    padding: 56px 24px 40px;
+    gap: 28px;
     transform: translateY(18px);
   }
   .hero-copy.is-active {
@@ -384,14 +388,70 @@
     inset: 0;
     transform: none;
   }
-  .hero h1 { font-size: 40px; }
-  .purpose-photo { height: 320px; }
+  .hero h1 { font-size: 40px; max-width: none; letter-spacing: -1px; }
+  .hero-copy > div p { font-size: 16px; }
+  .hero-actions { gap: 12px; }
+  .products-home { padding: 72px 0; }
+  .products-home h2 { font-size: 36px; }
+  .product-card { padding: 20px 20px 28px; }
+  .purpose { padding: 72px 0; }
+  .purpose h2 { font-size: 32px; }
+  .purpose .body { font-size: 16px; }
+  .purpose-photo { height: 280px; }
+  .voices, .support, .paths { padding-top: 72px; padding-bottom: 72px; }
+  .voices h2, .support h2, .paths h2 { font-size: 32px; }
+  .path-card img { height: 220px; }
 }
 
 @media (max-width: 700px) {
-  .path-grid, .badge-row, .icon-row { grid-template-columns: 1fr 1fr; display: grid; }
-  .hero h1 { font-size: 34px; }
-  .voice-row { grid-template-columns: 1fr; }
+  .path-grid { grid-template-columns: 1fr; }
+  .badge-row, .icon-row { grid-template-columns: 1fr 1fr; display: grid; }
+  .hero-frame { min-height: 0; }
+  .hero-copy { padding: 40px 20px 32px; gap: 24px; }
+  .hero-badge {
+    max-width: 100%;
+    flex-wrap: wrap;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    line-height: 1.35;
+    padding: 8px 12px;
+  }
+  .hero h1 { font-size: 30px; letter-spacing: -0.8px; }
+  .hero-copy > div p { font-size: 15px; line-height: 1.55; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .trust { padding: 56px 0; }
+  .trust h2 { font-size: 28px; }
+  .products-home { padding: 56px 0; }
+  .products-home h2 { font-size: 28px; }
+  .products-home .lede { font-size: 15px; }
+  .product-card { padding: 16px 16px 24px; }
+  .product-name { font-size: 20px; }
+  .purpose { padding: 56px 0; }
+  .purpose h2 { font-size: 28px; }
+  .purpose-photo { height: 220px; }
+  .voices, .support, .paths { padding-top: 56px; padding-bottom: 56px; }
+  .voices h2, .support h2, .paths h2 { font-size: 28px; margin-bottom: 28px; }
+  .voice-row { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
   .voice-btn.prev { order: 2; justify-self: start; }
   .voice-btn.next { order: 3; justify-self: end; }
+  .avatar { width: 140px; height: 140px; }
+  .voices h3 { font-size: 20px; line-height: 1.3; }
+  .voices blockquote { font-size: 16px; line-height: 1.45; }
+  .support-card { min-height: 0; padding: 24px; gap: 24px; }
+  .support-card h3 { font-size: 20px; }
+  .badge-row img, .icon-row img { width: 56px; height: 56px; }
+  .badge-row figure:first-child img { width: 52px; height: 48px; }
+  .badge-row figcaption, .icon-row figcaption { font-size: 13px; }
+  .path-card { padding: 20px; }
+  .path-card img { height: auto; aspect-ratio: 4 / 3; }
+  .path-card h3 { font-size: 17px; }
+  .support-actions { flex-direction: column; align-items: stretch; }
+  .support-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 26px; }
+  .trust h2, .products-home h2, .purpose h2, .voices h2, .support h2, .paths h2 { font-size: 24px; }
+  .badge-row, .icon-row { gap: 12px; }
 }

@@ -744,20 +744,44 @@ ul.role-list li::before { content: ""; position: absolute; left: 0; top: 8px; wi
 .form-note { min-height: 22px; margin-top: 12px; color: var(--muted); font-size: 14px; }
 
 @media (max-width: 900px) {
-  .careers-hero { min-height: 0; }
+  .careers-hero { min-height: 0; padding: 56px 0; }
   .careers-hero h1 { font-size: 40px; }
-  .careers-hero-photo { width: 100%; height: auto; aspect-ratio: 472 / 415.03; }
+  .careers-hero-photo {
+    width: 100%;
+    height: auto;
+    max-width: 472px;
+    aspect-ratio: 472 / 415.03;
+    justify-self: start;
+    box-sizing: border-box;
+  }
+  .careers-hero-crop { width: 100%; height: 100%; }
   .careers-hero .btn-orange, .careers-hero .btn-white { width: auto; }
+  .careers-hero .hero-actions { flex-direction: column; align-items: stretch; }
+  .careers-hero .hero-actions .btn { width: 100%; }
   .workshop { width: 100%; height: auto; aspect-ratio: 430 / 360; }
   .work-items { margin-top: 8px; }
   .careers-hero-grid, .work-layout, .culture-layout, .team-bento, .platform-grid, .quote-grid { grid-template-columns: 1fr; }
+  .quote-grid { justify-content: stretch; }
+  .leader-card { height: auto; min-height: 340px; max-width: 360px; }
+  .leader-photo { height: 100%; min-height: 340px; }
   .pillar-grid { grid-template-columns: 1fr; }
   .pillar-grid article, .pillar-grid article.wide { grid-column: auto; }
   .teams h2 { font-size: 32px; }
   .team-bento, .team-stack { min-height: 0; }
-  .openings h2 { font-size: 36px; }
+  .openings h2 { font-size: 32px; }
   .openings-filters { grid-template-columns: 1fr; }
-  .platforms h2 { font-size: 36px; }
-  .talent-intro h2 { font-size: 36px; }
+  .platforms h2 { font-size: 32px; }
+  .talent-intro h2 { font-size: 32px; }
   .talent-panel .form-grid { grid-template-columns: 1fr; }
+  .platform-card { min-height: 0; padding: 24px 20px; }
+  .platform-card h3 { font-size: 24px; }
+}
+
+@media (max-width: 600px) {
+  .careers-hero h1 { font-size: 32px; }
+  .careers-hero-copy > p:not(.careers-badge) { font-size: 15px; }
+  .leaders-head h2, .openings h2, .platforms h2, .talent-intro h2, .teams h2 { font-size: 28px; }
+  .leader-card { max-width: none; min-height: 300px; }
+  .leader-photo { min-height: 300px; }
+  .culture-copy h2 { font-size: 28px; }
 }
